@@ -1,6 +1,8 @@
-/// <reference path="Colors.ts" />
+import { Colors } from "./Colors";
+import { Ball } from "./Ball";
+import { RowOfBalls } from "./RowOfBalls";
 
-class Tools {
+export class Tools {
     public static fromString(value: string): Colors {
         if (value.endsWith(Colors.Red)) return Colors.Red;
         if (value.endsWith(Colors.Blue)) return Colors.Blue;

@@ -1,3 +1,3 @@
-interface IRendering {
+export interface IRendering {
     Render(): HTMLElement;    
 }

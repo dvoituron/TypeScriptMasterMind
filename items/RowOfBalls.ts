@@ -1,8 +1,8 @@
-/// <reference path="IRendering.ts" />
-/// <reference path="Ball.ts" />
-/// <reference path="../MasterMind.ts" />
+import { Ball } from "./Ball";
+import { MasterMind } from "../MasterMind";
+import { IRendering } from "./IRendering";
 
-class RowOfBalls implements IRendering {
+export class RowOfBalls implements IRendering {
     private NUMBER_OF_BALLS: number = 4; 
     private _balls: Ball[] = new Array<Ball>();
 

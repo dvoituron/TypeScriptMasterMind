@@ -1,19 +1,19 @@
-/// <reference path="IRendering.ts" />
-/// <reference path="Tools.ts" />
-/// <reference path="Colors.ts" />
-/// <reference path="../MasterMind.ts" />
+import { Tools } from "./Tools";
+import { Colors } from "./Colors";
+import { MasterMind } from "../MasterMind";
+import { IRendering } from "./IRendering";
 
-class Ball implements IRendering {
+export class Ball implements IRendering {
 
     constructor();
     constructor(isDefaultRandomized: boolean);
     constructor(isDefaultRandomized: boolean, isClickable: boolean);
     constructor(isDefaultRandomized?: boolean, isClickable?: boolean) {
-        this.isClickable = (isClickable == true);;
+        this.isClickable = (isClickable == true);
         if (isDefaultRandomized)
             this.Color = Tools.randomColor();
         else
-            this.Color = Colors.White;
+            this.Color = Colors.White; 
     }
 
     public Color: Colors;

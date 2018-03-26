@@ -14,6 +14,19 @@
     <div id="btnPlay">Play</div>
 </body>
 
-<script type="text/javascript" src="./dist/MasterMind.js"></script>
-
 </html>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.21.0/system.js"></script>
+<script>
+    SystemJS.config({
+       map: {
+          jquery: 'https://code.jquery.com/jquery.js',
+          linqts: '/node_modules/linqts/dist/linqts.js'
+       },
+       packages: {
+          '.': { defaultExtension: 'js' }
+       }
+    });
+  
+    SystemJS.import("./dist/MasterMind.js");
+  </script>

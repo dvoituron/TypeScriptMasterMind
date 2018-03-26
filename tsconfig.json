@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "traceResolution": false,
     "noImplicitAny": true,
     "sourceMap": true,
     "watch": true,
     "strict": true,
     "removeComments": true,
-    "outFile": "./dist/MasterMind.js",
+    "outDir": "./dist",
     "lib": [
       "es6",
       "dom"

@@ -1,6 +1,11 @@
-/// <reference path="items/RowOfBalls.ts" />
+import { List } from "linqts"
+import { RowOfBalls } from "./items/RowOfBalls";
 
-class MasterMind {
+export class MasterMind {
+    constructor() {
+        this.Play();
+    }
+
     public ShowSolution(div: HTMLElement | null): void {
         div!.appendChild(MasterMind.Solution.Render());
     } 
@@ -24,12 +29,9 @@ class MasterMind {
     }
 
     private checkSolution(): boolean {
-        if (MasterMind.Rows.length <= 0) return false;
-
-        let lastRow: RowOfBalls = MasterMind.Rows[MasterMind.Rows.length - 1];
-        let solution: RowOfBalls = MasterMind.Solution;
-
-        return lastRow.goodBalls == solution.goodBalls;
+        let rows = new List(MasterMind.Rows);
+        if (rows.Count() <= 0) return false;
+        return rows.LastOrDefault().goodBalls == MasterMind.Solution.goodBalls;
     }
  
     public static Solution = new RowOfBalls(true, false);
@@ -39,6 +41,7 @@ class MasterMind {
 
 let mm = new MasterMind();
 mm.ShowSolution(document.getElementById("solution"));
+mm.Display(document.getElementById("game"));
 document.getElementById("btnPlay")!.addEventListener("click", () => {
     mm.Play();
     mm.Display(document.getElementById("game"));
