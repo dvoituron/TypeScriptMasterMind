@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "watch": true,
+    "strict": true,
+    "removeComments": true,
+    "outFile": "./dist/MasterMind.js",
+    "lib": [
+      "es6",
+      "dom"
+    ]
+  },
+  "include": [
+    "./**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

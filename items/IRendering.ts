@@ -1,0 +1,3 @@
+interface IRendering {
+    Render(): HTMLElement;    
+}
